@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/maos999/cluster.git
     targetRevision: HEAD
-    path: apps/Blackbox
+    path: apps/blackbox
     
   destination: 
     server: https://kubernetes.default.svc
