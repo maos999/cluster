@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/maos999/k8s-dev.git
+        repoURL: https://github.com/maos999/cluster.git
         revision: HEAD
         directories:
           - path: apps/*
@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/maos999/k8s-dev.git
+        repoURL: https://github.com/maos999/cluster.git
         targetRevision: HEAD
         path: '{{path}}'
         directory:
