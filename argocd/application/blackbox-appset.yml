@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: blackbox-appset
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        owner: maos999
+        repoURL: https://github.com/maos999/k8s-dev.git
+        revision: HEAD
+        directories:
+          - path: apps/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/maos999/k8s-dev.git
+        targetRevision: HEAD
+        path: apps/Blackbox
+        directory:
+          recurse: true
+          exclude: '{*.json}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
