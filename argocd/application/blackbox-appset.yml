@@ -6,8 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        owner: maos999
-        repoURL: https://github.com/maos999/k8s-dev.git
+        repoURL: https://github.com/maos999/cluster.git
         revision: HEAD
         directories:
           - path: apps/*
