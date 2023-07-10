@@ -16,9 +16,9 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/maos999/k8s-dev.git
+        repoURL: https://github.com/maos999/cluster.git
         targetRevision: HEAD
-        path: apps/Blackbox
+        path: '{{path}}'
         directory:
           recurse: true
           exclude: '{*.json}'
